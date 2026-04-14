@@ -8,19 +8,19 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --blue: #1B3F8A;
-    --blue-light: #2A5BC7;
-    --gold: #F5A623;
-    --dark: #0D163A;
-    --mid: #1a2f6e;
-    --surface: #F4F6FB;
+    --blue: #1a03b5;
+    --blue-light: #3525d4;
+    --gold: #f8f90a;
+    --dark: #0a023c;
+    --mid: #120566;
+    --surface: #f4f3ff;
     --white: #ffffff;
-    --text: #1a1a2e;
-    --muted: #6b7a99;
-    --border: #e0e6f0;
-    --green: #16a34a;
-    --orange: #ea580c;
-    --red: #dc2626;
+    --text: #0a023c;
+    --muted: #6b6a99;
+    --border: #dddaf5;
+    --green: #6bbd00;
+    --orange: #f8450a;
+    --red: #e42158;
   }
 
   body {
@@ -44,6 +44,7 @@
     position: absolute;
     inset: 0;
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
   }
   .hero-badge {
     display: inline-block;
@@ -62,6 +63,7 @@
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 800;
     letter-spacing: -0.02em;
+    line-height: 1.1;
     margin-bottom: 16px;
   }
   .hero h1 span { color: var(--gold); }
@@ -86,10 +88,16 @@
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: all 0.2s;
     cursor: pointer;
   }
   .hero-pill:hover { background: rgba(255,255,255,0.22); }
+  .hero-pill.active {
+    background: white;
+    color: var(--dark);
+    border-color: white;
+    font-weight: 700;
+  }
 
   /* NAV */
   .sticky-nav {
@@ -144,9 +152,9 @@
     flex-shrink: 0;
     color: white;
   }
-  .c1-num { background: linear-gradient(135deg, #1B3F8A, #2A5BC7); }
-  .c2-num { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-  .c3-num { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+  .c1-num { background: linear-gradient(135deg, #1a03b5, #3525d4); }
+  .c2-num { background: linear-gradient(135deg, #e42158, #f8450a); }
+  .c3-num { background: linear-gradient(135deg, #00b8c8, #00d7eb); color: #0a023c; }
 
   .concept-title-block h2 {
     font-size: 30px;
@@ -377,8 +385,8 @@
     font-weight: 700;
     flex-shrink: 0;
   }
-  .step-done { background: #16a34a; color: white; }
-  .step-active { background: #2A5BC7; color: white; }
+  .step-done { background: #6bbd00; color: white; }
+  .step-active { background: #1a03b5; color: white; }
   .step-todo { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.5); }
   .ppp-step-label { font-size: 12px; color: rgba(255,255,255,0.7); }
   .ppp-step.active .ppp-step-label { color: white; font-weight: 600; }
@@ -432,7 +440,7 @@
   .ai-avatar {
     width: 28px; height: 28px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), var(--gold));
+    background: linear-gradient(135deg, #1a03b5, #f8f90a);
     display: flex; align-items: center; justify-content: center;
     font-size: 13px;
     color: white;
@@ -451,8 +459,8 @@
     color: #374151;
   }
   .ai-suggestion {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
+    background: #ebe8ff;
+    border: 1px solid #c4bcff;
     border-radius: 8px;
     padding: 8px 10px;
     font-size: 11px;
@@ -520,7 +528,7 @@
   .cal-generate-btn {
     width: 100%;
     margin-top: 16px;
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    background: linear-gradient(135deg, #e42158, #f8450a);
     color: white;
     border: none;
     border-radius: 10px;
@@ -587,12 +595,12 @@
     background: white;
   }
   .anita-topbar {
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    background: linear-gradient(135deg, #00b8c8, #00d7eb);
     padding: 14px 20px;
     display: flex;
     align-items: center;
     gap: 12px;
-    color: white;
+    color: #0a023c;
   }
   .anita-avatar {
     width: 36px; height: 36px;
@@ -624,7 +632,7 @@
     font-size: 13px;
     flex-shrink: 0;
   }
-  .msg-avatar.bot { background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; }
+  .msg-avatar.bot { background: linear-gradient(135deg, #00b8c8, #00d7eb); color: #0a023c; }
   .msg-avatar.user-av { background: var(--blue); color: white; font-size: 11px; font-weight: 700; }
   .msg-bubble {
     max-width: 75%;
@@ -642,8 +650,8 @@
     margin-top: 8px;
   }
   .chip {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
+    background: #ebe8ff;
+    border: 1px solid #c4bcff;
     color: var(--blue);
     font-size: 11px;
     font-weight: 500;
@@ -674,7 +682,7 @@
   .anita-send {
     width: 36px; height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    background: linear-gradient(135deg, #00b8c8, #00d7eb);
     border: none;
     color: white;
     font-size: 16px;
@@ -745,11 +753,11 @@
     margin-right: 6px;
     margin-bottom: 6px;
   }
-  .tag-blue { background: #eff6ff; color: #1d4ed8; }
-  .tag-purple { background: #f5f3ff; color: #7c3aed; }
-  .tag-cyan { background: #ecfeff; color: #0891b2; }
-  .tag-green { background: #f0fdf4; color: #16a34a; }
-  .tag-orange { background: #fff7ed; color: #ea580c; }
+  .tag-blue { background: #ebe8ff; color: #1a03b5; }
+  .tag-purple { background: #fde8ee; color: #e42158; }
+  .tag-cyan { background: #e0fbff; color: #00869a; }
+  .tag-green { background: #edfad6; color: #3d6e00; }
+  .tag-orange { background: #fff0ec; color: #c43200; }
 </style>
 </head>
 <body>
@@ -768,9 +776,6 @@
 
 <!-- NAV -->
 <nav class="sticky-nav">
-  <div class="nav-item active" data-tab="ppp">01 — Program Planning Partner</div>
-  <div class="nav-item" data-tab="cal">02 — Calendar Coordinator</div>
-  <div class="nav-item" data-tab="anita">03 — Ask Anita</div>
   <a class="nav-item summary-link" href="#summary">Summary ↓</a>
 </nav>
 
@@ -1255,15 +1260,14 @@
 </section>
 
 <script>
-  // Tab switching
-  const tabNavItems = document.querySelectorAll('.nav-item[data-tab]');
+  const heroPills = document.querySelectorAll('.hero-pill[data-tab]');
   const tabPanels = document.querySelectorAll('.tab-panel');
 
   function switchTab(tabId) {
-    // Update nav
-    tabNavItems.forEach(n => n.classList.remove('active'));
-    const activeNav = document.querySelector(`.nav-item[data-tab="${tabId}"]`);
-    if (activeNav) activeNav.classList.add('active');
+    // Update hero pills
+    heroPills.forEach(p => p.classList.remove('active'));
+    const activePill = document.querySelector(`.hero-pill[data-tab="${tabId}"]`);
+    if (activePill) activePill.classList.add('active');
 
     // Update panels
     tabPanels.forEach(p => p.classList.remove('active'));
@@ -1278,12 +1282,12 @@
       setTimeout(() => { b.style.width = w; }, 50);
     });
 
-    // Scroll to top of tab area
+    // Scroll to top of content
     document.querySelector('.sticky-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  tabNavItems.forEach(item => {
-    item.addEventListener('click', () => switchTab(item.getAttribute('data-tab')));
+  heroPills.forEach(pill => {
+    pill.addEventListener('click', () => switchTab(pill.getAttribute('data-tab')));
   });
 
   // Smooth scroll for Summary link
@@ -1295,18 +1299,8 @@
     });
   });
 
-  // Init effort bars for the first tab
-  document.querySelectorAll('#ppp .effort-bar-fill').forEach(b => {
-    const w = b.style.width;
-    b.setAttribute('data-width', w);
-    b.style.width = '0%';
-    setTimeout(() => { b.style.width = w; }, 300);
-  });
-
-  // Hero pills switch tabs
-  document.querySelectorAll('.hero-pill[data-tab]').forEach(pill => {
-    pill.addEventListener('click', () => switchTab(pill.getAttribute('data-tab')));
-  });
+  // Init first tab + effort bars
+  switchTab('ppp');
 </script>
 </body>
 </html>
